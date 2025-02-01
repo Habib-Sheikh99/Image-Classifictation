@@ -1,9 +1,11 @@
-koimport pandas as pd
+import pandas as pd
 import numpy as np
 
 from tensorflow import keras as krs
 from tensorflow.keras import Sequential
 # from tensorflow.keras.layers import Flatten, Dense
+
+from sklearn.model_selection import StandardScaler
 
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split, GridSearchCV
