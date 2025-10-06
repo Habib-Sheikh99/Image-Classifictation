@@ -11,20 +11,18 @@ from sklearn.model_selection import train_test_split, GridSearchCV
 
 import matplotlib.pyplot as plt
 import seaborn as sns
+
 # ------------------------------------------------------------------- #
 
 mnist = krs.datasets.mnist # Load Dataset
-
-
 (x_train, y_train), (x_test, y_test) = mnist.load_data() # Splitting...
-
 
 # Normalizing...
 x_train, x_test = x_train / 255.0, x_test / 255.0  # This will normalize the Training and Testing Data
                                                    # It will convert the data into the range of 0 - 1 
 
-# ------------------------------------------------------------------- #
 
+# ------------------------------------------------------------------- #
 
 
 from tensorflow.keras.layers import Flatten, Dense
@@ -49,8 +47,12 @@ model.fit(x_train, y_train, epochs=5)
 test_loss, test_accuracy = model.evaluate(x_test, y_test)
 print(f"\nTest Accuracy: {test_accuracy:.2f}\n\n")
 
-# Visualize predictions
+# Make predictions
 predictions = model.predict(x_test)
+
+
+# ------------------------------------------------------------------- #
+
 
 # Displaying a few test images with their predicted and true labels
 plt.figure(figsize=(10, 10), facecolor='gray') # Specify the Size and Foreground Color according to preference or requirements.
