@@ -60,7 +60,7 @@ for i in range(9):
     plt.subplot(3, 3, i + 1)  # Organizing...
     plt.imshow(x_test[i], cmap='gray') # This is the Image in the Visulaiztion Window.
     plt.title(f"Pred: {predictions[i].argmax()}, True: {y_test[i]}") # And These are the labels on those images.
-    plt.axis('off') # If you need explanation on this, Go to a Doctor! 
+    plt.axis('off') # plots are images. So, axis is off.
 plt.show()
 
 
